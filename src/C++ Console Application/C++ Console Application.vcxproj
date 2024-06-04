@@ -22,6 +22,7 @@
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".github\workflows\build.yml" />
     <None Include=".gitignore" />
     <None Include="vcpkg.json" />
     <None Include="vcpkg_install.bat" />
@@ -106,19 +107,19 @@
     <VcpkgEnableManifest>true</VcpkgEnableManifest>
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <VcpkgInstalledDir>$(ProjectDir)vcpkg\</VcpkgInstalledDir>
+    <VcpkgInstalledDir>$(ProjectDir)vcpkg_installed\</VcpkgInstalledDir>
     <VcpkgUseStatic>false</VcpkgUseStatic>
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <VcpkgInstalledDir>$(ProjectDir)vcpkg\</VcpkgInstalledDir>
+    <VcpkgInstalledDir>$(ProjectDir)vcpkg_installed\</VcpkgInstalledDir>
     <VcpkgUseStatic>false</VcpkgUseStatic>
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <VcpkgInstalledDir>$(ProjectDir)vcpkg\</VcpkgInstalledDir>
+    <VcpkgInstalledDir>$(ProjectDir)vcpkg_installed\</VcpkgInstalledDir>
     <VcpkgUseStatic>false</VcpkgUseStatic>
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <VcpkgInstalledDir>$(ProjectDir)vcpkg\</VcpkgInstalledDir>
+    <VcpkgInstalledDir>$(ProjectDir)vcpkg_installed\</VcpkgInstalledDir>
     <VcpkgUseStatic>false</VcpkgUseStatic>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

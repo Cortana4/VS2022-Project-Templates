@@ -1,4 +1,4 @@
 .vs/
 bin/
 obj/
-vcpkg/
+vcpkg_installed/

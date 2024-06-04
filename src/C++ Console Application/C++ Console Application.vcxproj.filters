@@ -23,5 +23,6 @@
     <None Include="vcpkg.json" />
     <None Include=".gitignore" />
     <None Include="vcpkg_install.bat" />
+    <None Include=".github\workflows\build.yml" />
   </ItemGroup>
 </Project>
