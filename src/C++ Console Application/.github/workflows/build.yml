@@ -16,25 +16,28 @@ jobs:
       fail-fast: false
       matrix:
         configuration: ['Debug', 'Release']
-        platform: ['Win32', 'x64']
+        platform: ['x86', 'x64']
 
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
       with:
         submodules: false
+
+    - name: Checkout vcpkg
+      uses: actions/checkout@v4
+      with:
         repository: microsoft/vcpkg
         path: vcpkg
 
+    - name: Setup vcpkg
+      run: |
+        cd vcpkg
+        ./bootstrap-vcpkg.bat
+        ./vcpkg integrate install
+
     - name: Invoke Developer Command Prompt for VS
       uses: ilammy/msvc-dev-cmd@v1
-
-    - name: Print working directory and list files
-      run: |
-        echo "Current working directory:"
-        cd
-        echo "Files in current directory:"
-        dir
 
     - name: Build
       run: msbuild /p:Configuration=${{ matrix.configuration }} /p:Platform=${{ matrix.platform }}
@@ -42,5 +45,5 @@ jobs:
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: ${{ matrix.platform }}-${{ matrix.platform }}
-        path: bin/${{ matrix.platform }}/${{ matrix.configuration }}
+        name: ${{ matrix.platform }}-${{ matrix.configuration }}
+        path: bin/${{ matrix.platform == 'x86' && 'Win32' || matrix.platform }}/${{ matrix.configuration }}
