@@ -1,1 +1,0 @@
-Getting started with C++. Creates a console application printing 'Hello World!' by default.
