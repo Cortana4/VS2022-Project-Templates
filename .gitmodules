@@ -1,6 +1,6 @@
 [submodule "src/Cpp-Console-Application"]
 	path = src/Cpp-Console-Application
-	url = https://github.com/Cortana4/Cpp-Console-Application.git
+	url = git@github.com:Cortana4/Cpp-Console-Application.git
 [submodule "src/Cpp-Qt-Application"]
 	path = src/Cpp-Qt-Application
-	url = https://github.com/Cortana4/Cpp-Qt-Application.git
+	url = git@github.com:Cortana4/Cpp-Qt-Application.git
